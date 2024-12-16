@@ -347,7 +347,7 @@ yourDiscount += $"A discount of {((price - salePrice) / price):P1}!";  //inserte
 Console.WriteLine(yourDiscount);
 */
 
-
+/*
 int invoiceNumber = 1201;
 decimal productShares = 25.456m;
 decimal subtotal = 2750.00m;
@@ -374,3 +374,172 @@ formatedLine += paymentAmount.PadLeft(10);
 
 Console.WriteLine("1234567890123456789012345678901234567890");
 Console.WriteLine(formatedLine);
+*/
+
+
+/*
+string customerName = "Ms. Barros";
+
+string currentProduct = "Magic Yield";
+int currentShares = 2975000;
+decimal currentReturn = 0.1275m;
+decimal currentProfit = 55000000.0m;
+
+string newProduct = "Glorious Futurn";
+decimal newReturn = 0.13125m;
+decimal newProfit = 63000000.0m;
+
+// your logic here
+Console.WriteLine($"Dears {customerName}, \nAs a customer of our Magic Yield offering we are exited to tell you about a now financial product that would dramatically increase your return. \n\nCurrently, you own {currentShares:N2} shares at a return of {currentReturn:P2}. \n\nOur new product, Glorious future offers a return of {newReturn:P2}. Given your current volume, your potential profit would {newProfit:C} \n");
+
+Console.WriteLine("Here's a quick comparison\n");
+Console.WriteLine($"{currentProduct.PadRight(21)} {currentReturn:P2}    {currentProfit:C}");
+Console.WriteLine($"{newProduct.PadRight(21)} {newReturn:P2}    {newProfit:C}");
+string comparisonMessage = "";
+
+//Your logic here
+comparisonMessage += currentProduct.PadRight(20);
+comparisonMessage += String.Format("{0:P}", currentReturn).PadRight(10);
+comparisonMessage += String.Format("{0:C}", currentProfit).PadRight(20);
+
+comparisonMessage += "\n";
+comparisonMessage += newProduct.PadRight(20);
+comparisonMessage += String.Format("{0:P}", newReturn).PadRight(10);
+comparisonMessage += String.Format("{0:C}", newProfit).PadRight(20);
+
+Console.WriteLine(comparisonMessage);
+
+*/
+
+
+//IndexOf -  Substring
+/*
+string message = "Find what is (inside  the parenteses)";
+int openingPosition = message.IndexOf('(');
+int closingPosition = message.IndexOf(')');
+
+// Console.WriteLine(openingPosition);
+// Console.WriteLine(closingPosition);
+
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+*/
+/*
+
+string message = "What is the value <span>between the tags</span>";
+
+int openingPosition = message.IndexOf("<span>");
+int closingPosition = message.IndexOf("</span>");
+Console.WriteLine(openingPosition);
+Console.WriteLine(closingPosition);
+
+openingPosition += 6;
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+*/
+
+/*
+string message = "what is the value <span>between the tags</span>";
+
+const string openSpan = "<span>";
+const string closeSpan = "</span>";
+
+int openingPosition = message.IndexOf(openSpan);
+int closingPosition = message.IndexOf(closeSpan);
+
+openingPosition += openSpan.Length;
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+*/
+
+// IndexOf LastIndexOf
+
+/*
+string message = "hello there";
+
+int first_h = message.IndexOf('h');
+int last_h = message.LastIndexOf('h');
+
+Console.WriteLine($"For the message: '{message}', the fisrt 'h' is at positio {first_h} and the last 'h' is at position {last_h}.");
+*/
+
+/*
+string message = "(what if) I am (only interested) in the last (set of paretnesis)";
+int openingPosition = message.LastIndexOf('(');
+
+openingPosition += 1;
+int closingPosition = message.LastIndexOf(')');
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+*/
+
+/*
+string message = "(whar if) there are (more than) one (set of parentheses)";
+
+while (true)
+{
+    int openingPosition = message.IndexOf('(');
+    if (openingPosition == -1) break;
+
+    openingPosition += 1;
+    int closingPosition = message.IndexOf(')');
+    int length = closingPosition - openingPosition;
+    Console.WriteLine(message.Substring(openingPosition, length));
+
+    message = message.Substring(closingPosition + 1);
+}
+*/
+/*
+ string message = "Hello, world";
+ char[] charsToFind = {'a', 'e', 'i'};
+
+ int index = message.IndexOfAny(charsToFind);
+
+ Console.WriteLine($"Found '{message[index]}' in '{message}' at index: {index}.");
+ */
+
+/*
+ string message = "Help (find the {opening symbols})";
+ Console.WriteLine($"Searching This message: {message}");
+ char[] openSymbols = {'[','{','('};
+ int startPosition = 5;
+ int openingPosition = message.IndexOfAny(openSymbols);
+ Console.WriteLine($"Found without using startPopsition, {message.Substring(openingPosition)}");
+
+ openingPosition = message.IndexOfAny(openSymbols, startPosition);
+ Console.WriteLine($"Found With using startPosition  {startPosition}: {message.Substring(openingPosition)}");
+ */
+
+ string message = "(what if) I HAVE [different symbols] but every {open symbols} needs a  [matching closing symbol]";
+
+ char[] openSymbols = { '[', '{', '(' };
+
+ int closingPosition = 0;
+
+ while (true)
+ {
+    int openingPosition = message.IndexOfAny(openSymbols, closingPosition);
+    if (openingPosition == -1) break;
+
+    string currentSymbol = message.Substring(openingPosition, 1);
+
+    char matchingSymbol = ' ';
+
+    switch (currentSymbol)
+    {
+        case "[":
+            matchingSymbol = ']';
+            break;
+        case "{":
+            matchingSymbol = '}';
+            break;
+        case "(":
+            matchingSymbol = ')';
+            break;
+    }
+    openingPosition += 1;
+    closingPosition = message.IndexOf(matchingSymbol, openingPosition);
+
+    int length = closingPosition -openingPosition;
+    Console.WriteLine(message.Substring(openingPosition, length));
+ }
