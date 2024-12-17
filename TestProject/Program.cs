@@ -510,6 +510,7 @@ while (true)
  Console.WriteLine($"Found With using startPosition  {startPosition}: {message.Substring(openingPosition)}");
  */
 
+/*
  string message = "(what if) I HAVE [different symbols] but every {open symbols} needs a  [matching closing symbol]";
 
  char[] openSymbols = { '[', '{', '(' };
@@ -540,6 +541,53 @@ while (true)
     openingPosition += 1;
     closingPosition = message.IndexOf(matchingSymbol, openingPosition);
 
-    int length = closingPosition -openingPosition;
+    int length = closingPosition - openingPosition;
     Console.WriteLine(message.Substring(openingPosition, length));
  }
+ */
+
+/*
+ string data = "12345John Smith            5000  3";
+ string updatedData = data.Remove(5, 20);
+ Console.WriteLine(updatedData);
+
+string message = "This--is--ex-amp-le--da-ta";
+message = message.Replace("--", " ");
+message = message.Replace("-", "");
+Console.WriteLine(message);
+*/
+
+const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+
+string quantity = "";
+string output = "";
+
+const string span1 = "<span>";
+const string span2 = "</span>";
+
+const string div1 = "<div>";
+const string div2 = "</div>";
+
+const string symbolTrade = "&trade";
+const string symbolReg = "&reg";
+
+
+int posicion1 = input.IndexOf(span1) + span1.Length;
+int posicion2 = input.IndexOf(span2); 
+
+int posicion3 = input.IndexOf(div1) + div1.Length;
+int posicion4 = input.IndexOf(div2);
+
+
+
+int length = posicion2 - posicion1;
+int length1 = posicion4 - posicion3;
+
+quantity += input.Substring(posicion1, length);
+output = input.Substring(posicion3, length1);
+output = output.Replace(symbolTrade, symbolReg);
+//your work here
+
+
+Console.WriteLine("Quantity:" + quantity);
+Console.WriteLine("Output:" + output);
