@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 CultureInfo.CurrentCulture = new CultureInfo("en-US");
 
-/*
+
 Console.WriteLine("Signed Integral Types");
 
 Console.WriteLine($"sbyte  : {sbyte.MinValue} to {sbyte.MaxValue}");
@@ -21,7 +21,7 @@ Console.WriteLine("Floating point types:");
 Console.WriteLine($"float  : {float.MinValue} to {float.MaxValue} (with ~6-9 digits of precision)");
 Console.WriteLine($"double : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
 Console.WriteLine($"decimal: {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precition)");
-*/
+
 /*
 int data;
 data = new int[3];
@@ -557,6 +557,7 @@ message = message.Replace("-", "");
 Console.WriteLine(message);
 */
 
+/*
 const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
 
 string quantity = "";
@@ -591,3 +592,4 @@ output = output.Replace(symbolTrade, symbolReg);
 
 Console.WriteLine("Quantity:" + quantity);
 Console.WriteLine("Output:" + output);
+*/
