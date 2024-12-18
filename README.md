@@ -69,3 +69,11 @@ Es una técnica se simplifica el formato compuesto. Para que se pueda interpolar
 -  **StartsWith():** verifica si una cadena comienza con una subcadena específica.
 - **EndsWith():** verifica si una si una cadena termina con una subcadena específica.
 - **SubsString():** permite recuperar una parte específica de una cadena, extrayendo caracteres desde una pisición inicial hasta una longitud especificada.
+
+  ## Modificar Contenido de Cadenas
+- **IndexOf():** localiza la posición de una o más cadenas de caracteres dentro de una cadena más grande.
+- **Substring():** Devuelve una subcadena que comienza en una posición específica de la cadena original.
+- **LastIndexOf():** devuelve la posición del indice de la última aparición de un carácter o  cadena dentro de una cadena dada.
+- **IndexOfAny(): **informa el indice de la primera aparición de cualquier caracter en una matriz de caracteres suministrada.
+- **Remove():** se utiliza para eliminar una pertee de una cadena desde un indice especificado.
+- **Replace():** rermplaza todas las apariciones de un caracter o subcadena dentro de una cadena por otro caracter o subcadena.
